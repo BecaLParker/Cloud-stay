@@ -1,2 +1,14 @@
+
 *.html
 coverage/
+
+/**/.DS_Store
+/coverage
+
+# Local cache of Rubocop remote config
+.rubocop-*
+
+*.html
+
+coverage/.resultset.json
+

@@ -1,0 +1,33 @@
+<p align="right"> <a href="/"> Sign out </a> &nbsp;&nbsp; <a href="/requests"> Requests </a></p>
+
+<h1><p align="center"> <%= 'Book a cloud stay'%> </p></h1> 
+
+<form action='/new_cloud'>
+<p align="center"><input type="submit" value="Add a cloud listing"></p>
+</form>
+
+<form action="/clouds" method="post" align="center">
+  <label for="available_from">
+    Available from (DD/MM/YY)
+    <input type="text" name="Available from">
+  </label>
+  <label for="available_to">
+	Available to (DD/MM/YY)
+    <input type="text" name="Available to">
+  </label>
+  <input type="submit" value="Update">
+</form>
+
+<table id="Available clouds" style="width: 80%;" border = "4"cellpadding = "1" align="center">
+	<tr>
+		<th colspan="3"><h2>AVAILABLE CLOUDS</h2></th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+    <!% @cloud.each do |cloud| %> 
+    <td><%= 'Cloud nine, description ...' %></td>
+    <!% end %>
+	</tr>
+</tbody>
+</table>

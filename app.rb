@@ -37,4 +37,8 @@ class CloudStay < Sinatra::Base
     session[:user_id] = user.id
     redirect '/'
   end
+
+  get '/clouds' do
+    erb :clouds
+  end
 end
