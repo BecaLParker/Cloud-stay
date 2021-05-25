@@ -19,4 +19,10 @@ feature 'visiting the clouds listing page' do
     expect(page).to have_link('Requests', href: '/requests')
   end
 
+  it 'shows boxes for the dates from / to availability' do
+    visit('/clouds')
+    expect(page).to have_field('Available from')
+    expect(page).to have_field('Available from')
+    expect(page).to have_button('Update')
+  end
 end
