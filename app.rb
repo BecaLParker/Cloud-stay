@@ -13,4 +13,8 @@ class CloudStay < Sinatra::Base
   get '/' do
     'Cloud Stay'
   end
+
+  get '/clouds' do
+    erb :clouds
+  end
 end
