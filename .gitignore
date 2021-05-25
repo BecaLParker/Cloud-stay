@@ -5,3 +5,5 @@
 .rubocop-*
 
 *.html
+
+coverage/.resultset.json
