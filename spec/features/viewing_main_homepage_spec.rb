@@ -22,7 +22,7 @@ feature 'visiting the clouds listing page' do
   it 'shows boxes for the dates from / to availability' do
     visit('/clouds')
     expect(page).to have_field('Available from')
-    expect(page).to have_field('Available from')
+    expect(page).to have_field('Available to')
     expect(page).to have_button('Update')
   end
 end
