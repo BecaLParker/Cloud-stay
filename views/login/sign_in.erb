@@ -1,0 +1,11 @@
+<h1>Sign In </h1>
+
+<form action="/sessions" method="post">
+    <input type="email" name="username" />
+    <input type="password" name="password" />
+    <input type="submit" name="Sign In">
+</form>
+
+<h1><%= flash[:notice] %></h1>
+
+<a href="/sign_up"> Sign Up </a>

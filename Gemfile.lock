@@ -5,6 +5,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     ansi (1.5.0)
     ast (2.4.2)
+    bcrypt (3.1.16)
     capybara (3.35.3)
       addressable
       mini_mime (>= 0.1.3)
@@ -96,6 +97,8 @@ GEM
       rack-protection (= 2.1.0)
       sinatra (= 2.1.0)
       tilt (~> 2.0)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
     term-ansicolor (1.2.2)
       tins (~> 0.8)
     terminal-table (3.0.1)
@@ -113,6 +116,7 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
+  bcrypt
   capybara
   coveralls
   pg
@@ -123,6 +127,7 @@ DEPENDENCIES
   simplecov-console
   sinatra
   sinatra-contrib
+  sinatra-flash
   webrick
 
 BUNDLED WITH
