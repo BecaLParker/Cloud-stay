@@ -8,4 +8,5 @@ feature 'Connects to siantra and dsiplays page' do
     visit('/')
     expect(page).to have_content('Cloud Stay')
   end
+  
 end
