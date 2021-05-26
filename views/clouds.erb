@@ -1,12 +1,14 @@
-<p align="right"> <a href="/"> Sign out </a> &nbsp;&nbsp; <a href="/requests"> Requests </a></p>
+<p align="right"> <a href="/"> Sign out </a> &nbsp;&nbsp; <a href="/requests"> Requests </a> </p>
 
 <h1><p align="center"> <%= 'Book a cloud stay'%> </p></h1> 
 
-<form action='/new_cloud'>
-<p align="center"><input type="submit" value="Add a cloud listing"></p>
+<p> <%= user.id %>
+
+<form action='/new'>
+  <p align="center"><input type="submit" value="Add a cloud listing"></p>
 </form>
 
-<form action="/clouds" method="post" align="center">
+<form action="#" method="get" align="center">
   <label for="available_from">
     Available from (DD/MM/YY)
     <input type="text" name="Available from">

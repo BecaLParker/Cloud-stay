@@ -1,15 +1,14 @@
 require 'pg'
 
-
 class Database
   def initialize(dbname)
     # @db_user = "postgres"
     # @db_password = "root"
     @db_name = dbname
-    @db_connection = PG.connect(:dbname => @db_name)
-    puts "Database connection made to: " + dbname
+    @db_connection = PG.connect(dbname: @db_name)
+    puts 'Database connection made to: ' + dbname
   rescue PG::Error
-    puts "DB error1"
+    puts 'DB error1'
   end
 
   def db_create(query)
