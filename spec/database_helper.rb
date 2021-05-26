@@ -1,6 +1,8 @@
-require 'users'
 
-def testcreate
-  User.user_create(username: 'dbtest@mail.com', password: 'password123')
-  
+require 'pg'
+
+def persisted_data(table:, id:)
+  connection = PG.connect(dbname: 'cloud_stay_test')
+  connection.query("SELECT * FROM #{table} WHERE id = '#{id}';")
+
 end

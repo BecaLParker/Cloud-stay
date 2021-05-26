@@ -3,6 +3,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'rack'
+require './lib/cloud'
 require 'sinatra/flash'
 require './lib/users'
 require './lib/book'
@@ -40,6 +41,7 @@ class CloudStay < Sinatra::Base
   end
 
   get '/clouds' do
+    @clouds = Cloud.all
     erb :clouds
   end
 
