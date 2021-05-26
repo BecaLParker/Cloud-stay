@@ -16,7 +16,6 @@ class Cloud
       connection = PG.connect(dbname: 'cloud_stay')
     end
       result = connection.exec("SELECT * FROM clouds;")
-      p result
       result.map do |cloud|
         Cloud.new(
         name: cloud['name'],
