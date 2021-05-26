@@ -9,7 +9,9 @@ feature 'visiting the clouds listing page' do
   it 'shows available clouds' do
     visit('/clouds')
     expect(page).to have_table('Available clouds')
-    expect(page).to have_content('Cloud nine')
+    save_and_open_page
+    expect(page).to have_content('Cloud Nine')
+    expect(page).to have_content('Cloud Nine NEW')
   end
 
   it 'shows page links' do
