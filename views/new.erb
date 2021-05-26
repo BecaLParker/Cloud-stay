@@ -1,0 +1,32 @@
+<p align="right"> <a href="/"> Sign out </a> &nbsp;&nbsp; <a href="/requests"> Requests </a></p>
+
+<h1><p align="center"> <%= 'Create a new cloud listing'%> </p></h1> 
+
+
+<form action="/clouds" method="post" align="center">
+  <label for="name">
+    Name
+    <input type="text" name="name">
+  </label>
+  <label for="description">
+    Description
+    <input type="text" name="description" placeholder="Max 500 character">
+  </label>
+  <label for="price">
+    Price
+    <input type="text" name="price">
+  </label>
+  <label for="available_from">
+    Available from (DD/MM/YY)
+    <input type="text" name="Available from">
+  </label>
+  <label for="available_to">
+	Available to (DD/MM/YY)
+    <input type="text" name="Available to">
+  </label>
+  <input type="submit" value="Update">
+</form>
+
+<form action='/clouds'> 
+<p align="center"><input type="submit" value="List my cloud"></p>
+</form>

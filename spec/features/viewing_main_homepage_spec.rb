@@ -9,9 +9,9 @@ feature 'visiting the clouds listing page' do
     connection.exec("INSERT INTO users (username, password) VALUES ('Glenn', 'Jerusha');")
     connection.exec("INSERT INTO clouds (name, description, price, user_id) VALUES ('Cloud Nine', 'Lovely property to have a Heavenly Day', '49,99', 1);")
     connection.exec("INSERT INTO clouds (name, description, price, user_id) VALUES ('Cloud Nine NEW', 'Lovely property to have a Heavenly Day after the storm', '99,99', 1);")
-   visit('/clouds')
+    visit('/clouds')
   end
-      # before block and code here for capybara to login first
+  # before block and code here for capybara to login first
 
   it 'shows available clouds' do
     expect(page).to have_table('Available clouds')

@@ -27,7 +27,7 @@ class CloudStay < Sinatra::Base
       flash[:notice] = 'Please check your email or password.'
       redirect('/')
     end
-  end 
+  end
 
   get '/sign_up' do
     erb(:'/login/new')
@@ -42,5 +42,9 @@ class CloudStay < Sinatra::Base
   get '/clouds' do
     @clouds = Cloud.all
     erb :clouds
+  end
+
+  get '/new' do
+    erb :new
   end
 end

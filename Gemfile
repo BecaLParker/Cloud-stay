@@ -4,12 +4,12 @@ source 'https://rubygems.org'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
+gem 'bcrypt'
 gem 'pg'
 gem 'rubocop'
 gem 'rubocop-rspec'
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'bcrypt'
 gem 'sinatra-flash'
 
 group :test do

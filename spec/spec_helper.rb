@@ -18,12 +18,6 @@ end
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
-RSpec.configure do |config|
-  config.before(:each) do
-    setup_test_database
-  end 
-end
-
 Capybara.app = CloudStay
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
