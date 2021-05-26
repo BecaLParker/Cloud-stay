@@ -21,7 +21,7 @@ class CloudStay < Sinatra::Base
     user = User.authenticate_user(username: params[:username], password: params[:password])
     if user
       session[:user_id] = user.id
-      redirect('/cloud')
+      redirect('/clouds')
     else
       flash[:notice] = 'Please check your email or password.'
       redirect('/')
