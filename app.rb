@@ -44,6 +44,12 @@ class CloudStay < Sinatra::Base
     erb :clouds
   end
 
+  post '/clouds' do
+    session[:user_id] = user.id
+    cloud = Cloud.create(name: params[:name], description: params[:description], price: params[:price], user_id: session[:user_id])
+    redirect '/clouds'
+  end
+
   get '/new' do
     erb :new
   end
