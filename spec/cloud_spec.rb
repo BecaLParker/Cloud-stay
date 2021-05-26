@@ -16,4 +16,19 @@ describe Cloud do
       expect(clouds.length).to eq(2)
     end
   end
+
+  describe '.create' do
+    it 'adds a new cloud' do
+      connection = PG.connect(dbname: 'cloud_stay_test')
+      # user = connection.exec("INSERT INTO users (username, password) VALUES ('Jenny', 'pass123');")
+      user = User.user_create(username: 'jenny@mail.com', password: 'pass123')
+      cloud = Cloud.create(name: 'Created Cloud', description: 'A fantastic cloud', price: '45.50', user_id: user.id)
+
+      expect(cloud).to be_a Cloud
+      expect(cloud.name).to eq 'Created Cloud'
+      expect(cloud.description).to eq 'A fantastic cloud'
+      expect(cloud.price).to eq '45.50'
+      expect(cloud.user_id).to eq user.id
+    end
+  end
 end

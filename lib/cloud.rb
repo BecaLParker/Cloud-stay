@@ -24,4 +24,14 @@ class Cloud
       )
     end
   end
+
+  def self.create(name:, description:, price:, user_id:)
+    connection = if ENV['ENVIRONMENT'] == 'test'
+                  PG.connect(dbname: 'cloud_stay_test')
+                else
+                  PG.connect(dbname: 'cloud_stay')
+                end
+    result = connection.exec()
+    Cloud.new(name:, description:, price:, user_id:)
+  end
 end
