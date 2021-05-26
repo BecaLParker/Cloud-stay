@@ -5,6 +5,7 @@ require 'sinatra/reloader'
 require 'rack'
 require 'sinatra/flash'
 require './lib/users'
+require './lib/book'
 
 class CloudStay < Sinatra::Base
   configure :development do
@@ -41,4 +42,11 @@ class CloudStay < Sinatra::Base
   get '/clouds' do
     erb :clouds
   end
+
+  get '/clouds/6/book' do
+    @book = Book.create
+    erb :book
+  end
+
+
 end
