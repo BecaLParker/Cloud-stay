@@ -25,9 +25,9 @@
 </thead>
 <tbody>
 	<tr>
-    <!% @cloud.each do |cloud| %> 
-    <td><%= 'Cloud nine, description ...' %></td>
-    <!% end %>
+    <% @clouds.each do |cloud| %> 
+    <td><%= cloud.name %></td>
+    <% end %>
 	</tr>
 </tbody>
 </table>

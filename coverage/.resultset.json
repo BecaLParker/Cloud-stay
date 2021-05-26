@@ -1,6 +1,33 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/mariavalerogonzalez/Documents/My_Projects/Makers/Week_5/Cloud-stay/spec/cloud_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/mariavalerogonzalez/Documents/My_Projects/Makers/Week_5/Cloud-stay/spec/features/initial_page_spec.rb": {
         "lines": [
           null,
@@ -50,6 +77,6 @@
         ]
       }
     },
-    "timestamp": 1621952720
+    "timestamp": 1622025043
   }
 }
