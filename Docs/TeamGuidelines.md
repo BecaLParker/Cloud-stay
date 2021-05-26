@@ -21,6 +21,11 @@
 * Click on "New pull request"
 * Select your branch in the "compare" select block
 * Click on "Create pull request"
+* The differences will be displayed below.
+* Create a pull request
+* Add a comment (optional)
+* Click "Create pull request"
+* A review will be required.
 
 ***NOTE: Another collaborator must review and merge your code. This is to prevent anyone accidentally pushing onto main.***
 

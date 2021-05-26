@@ -5,10 +5,16 @@ require 'simplecov-console'
 require 'rspec'
 require 'capybara'
 require 'capybara/rspec'
-require_relative './setup_database'
+require_relative './setup_test_database'
 
 # TODO: This ENV may potentially change to RACK_ENV
 ENV['ENVIRONMENT'] = 'test'
+
+RSpec.configure do |config|
+  config.before(:each) do
+    setup_test_database
+  end
+end
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 

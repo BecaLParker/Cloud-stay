@@ -1,3 +1,7 @@
+
+*.html
+coverage/
+
 /**/.DS_Store
 /coverage
 
@@ -7,3 +11,4 @@
 *.html
 
 coverage/.resultset.json
+

@@ -12,7 +12,16 @@ Clone of AirBnB - as an team engineering project during Makers Academy week 5
 
 Created the gem file. Setup the test environment and file structure.
 1 Test has been written to determine if sinatra works.
+The tests for signing up and signing in have been created and passed
 
 
 
-Demonstration Change
+
+
+## Credits
+
+* James McMullan
+* Dewald Viljoen
+* Beca Parker
+* Maria Valero
+* JP Ferreira
