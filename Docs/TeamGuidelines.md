@@ -6,7 +6,7 @@
 * Initially clone the repo
 * cd into the new directory
 
-#### Puilling and Pushing
+#### Pulling and Pushing
 1. Create a branch (git checkout -b < branch name >)
 2. Check that you are in the correct branch, not the main branch (git branch)
 3. Write your tests and then your code

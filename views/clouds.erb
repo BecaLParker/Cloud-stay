@@ -19,15 +19,18 @@
 </form>
 
 <table id="Available clouds" style="width: 80%;" border = "4"cellpadding = "1" align="center">
-	<tr>
-		<th colspan="3"><h2>AVAILABLE CLOUDS</h2></th>
-	</tr>
-</thead>
-<tbody>
-	<tr>
-    <!% @cloud.each do |cloud| %> 
-    <td><%= 'Cloud nine, description ...' %></td>
-    <!% end %>
-	</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th colspan="3"><h2>AVAILABLE CLOUDS</h2></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @clouds.each do |cloud| %> 
+    <tr>
+      <td><%= cloud.name %></td>
+      <td><%= cloud.description %></td>
+      <td><%= cloud.price %></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
