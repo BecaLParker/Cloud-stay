@@ -72,7 +72,7 @@ class CloudStay < Sinatra::Base
   end
 
   post '/clouds/:cloud_id/book' do
-    @book = Book.create(cloud_id: @cloud_id)
+    Book.create(cloud_id: @cloud_id, start_date: params[:start_date], end_date: params[:end_date])
     redirect '/clouds/:cloud_id/book'
   end
 
