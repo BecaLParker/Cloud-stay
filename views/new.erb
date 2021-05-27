@@ -3,7 +3,7 @@
 <h1><p align="center"> <%= 'Create a new cloud listing'%> </p></h1> 
 
 
-<form action="/clouds" method="post" align="center">
+<form action="/clouds/<%= @user_id %>/cloud" method="POST" align="center">
   <label for="name">
     Name
     <input type="text" name="name">

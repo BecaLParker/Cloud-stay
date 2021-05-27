@@ -1,5 +1,4 @@
 require 'PG'
-require 'users'
 
 class Cloud
   attr_reader :name, :description, :price, :user_id
@@ -34,7 +33,7 @@ class Cloud
                 else
                   PG.connect(dbname: 'cloud_stay')
                 end
-    result = connection.exec("INSERT INTO clouds (name, description, price, user_id) VALUES('#{name}', '#{description}', '#{price}', '#{user_id}') RETURNING id, name, description, price, user_id;")
+    result = connection.exec("INSERT INTO clouds (name, description, price, user_id) VALUES('#{name}', '#{description}', '#{price}', #{user_id}) RETURNING id, name, description, price, user_id;")
     result = Cloud.new(
       name: result[0]['name'], 
       description: result[0]['description'], 

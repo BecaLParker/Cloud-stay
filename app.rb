@@ -21,7 +21,7 @@ class CloudStay < Sinatra::Base
   post '/sessions' do
     user = User.authenticate_user(username: params[:username], password: params[:password])
     if user
-      session[:user_id] = user.id
+      session[:id] = user.id
       redirect('/clouds')
     else
       flash[:notice] = 'Please check your email or password.'
@@ -35,18 +35,28 @@ class CloudStay < Sinatra::Base
 
   post '/users' do
     user = User.user_create(username: params[:username], password: params[:password])
-    session[:user_id] = user.id
-    redirect '/'
+    redirect '/' 
+  end
+
+  post '/sessions/destroy' do
+    session.clear
+    flash[:notice] = 'You have signed out.'
+    redirect('/')
   end
 
   get '/clouds' do
+    @user = User.user_find(id: session[:id])
     @clouds = Cloud.all
     erb :clouds
   end
 
-  post '/clouds' do
-    session[:user_id] = user.id
-    cloud = Cloud.create(name: params[:name], description: params[:description], price: params[:price], user_id: session[:user_id])
+  get '/clouds/:id/cloud/new' do
+    @user_id = params[:id]
+    erb :new
+  end
+
+  post '/clouds/:id/cloud' do
+    Cloud.create(name: params[:name], description: params[:description], price: params[:price], user_id: params[:id])
     redirect '/clouds'
   end
 
