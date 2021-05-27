@@ -65,9 +65,15 @@ class CloudStay < Sinatra::Base
     erb :new
   end
 
-  get '/clouds/:cloud_id/book' do
-    @book = Book.create
+
+  get '/clouds/:cloud_id/book/new' do
+    @cloud_id = params[:cloud_id]
     erb :book
+  end
+
+  post '/clouds/:cloud_id/book' do
+    @book = Book.create(cloud_id: @cloud_id)
+    redirect '/clouds/:cloud_id/book'
   end
 
 end
