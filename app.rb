@@ -7,6 +7,7 @@ require './lib/cloud'
 require 'sinatra/flash'
 require './lib/users'
 require './lib/book'
+require './lib/availability'
 
 class CloudStay < Sinatra::Base
   configure :development do
@@ -57,7 +58,17 @@ class CloudStay < Sinatra::Base
   end
 
   post '/clouds/:id/cloud' do
-    Cloud.create(name: params[:name], description: params[:description], price: params[:price], user_id: params[:id])
+    cloud = Cloud.create(name: params[:name], description: params[:description], price: params[:price], user_id: params[:id])
+    redirect '/clouds'
+  end
+
+  get '/clouds/:cloud_id/add_availability' do
+    @cloud_id = params[:cloud_id]
+    erb:add_availability
+  end
+
+  post '/add_availability' do
+    Availability.create(start_date: params[:available_from], end_date: params[available_to], cloud_id: @c_1d)
     redirect '/clouds'
   end
 
@@ -70,4 +81,17 @@ class CloudStay < Sinatra::Base
     erb :book
   end
 
+  post '/available' do
+    #for M&J to have fun
+
+#     name: Maria
+# description: Cozy place in Galician coast
+# price: 40
+# available_from: 2021-05-29
+# available_to: 2021-05-30
+  end
+
 end
+
+
+# SELECTED * FROM availability(WHERE )

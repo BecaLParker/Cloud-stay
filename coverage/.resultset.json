@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/dewaldviljoen/Desktop/Applications/Week_5/Cloud-stay/spec/book_spec.rb": {
+      "/Users/mariavalerogonzalez/Documents/My_Projects/Makers/Week_5/Cloud-stay/spec/book_spec.rb": {
         "lines": [
           1,
           1,
@@ -22,7 +22,7 @@
           null
         ]
       },
-      "/Users/dewaldviljoen/Desktop/Applications/Week_5/Cloud-stay/spec/cloud_spec.rb": {
+      "/Users/mariavalerogonzalez/Documents/My_Projects/Makers/Week_5/Cloud-stay/spec/cloud_spec.rb": {
         "lines": [
           1,
           null,
@@ -60,7 +60,7 @@
           null
         ]
       },
-      "/Users/dewaldviljoen/Desktop/Applications/Week_5/Cloud-stay/spec/features/adding_new_cloud_spec.rb": {
+      "/Users/mariavalerogonzalez/Documents/My_Projects/Makers/Week_5/Cloud-stay/spec/features/adding_new_cloud_spec.rb": {
         "lines": [
           null,
           null,
@@ -80,7 +80,26 @@
           null
         ]
       },
-      "/Users/dewaldviljoen/Desktop/Applications/Week_5/Cloud-stay/spec/features/booking_spec.rb": {
+      "/Users/mariavalerogonzalez/Documents/My_Projects/Makers/Week_5/Cloud-stay/spec/features/availability_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/mariavalerogonzalez/Documents/My_Projects/Makers/Week_5/Cloud-stay/spec/features/booking_spec.rb": {
         "lines": [
           null,
           null,
@@ -100,7 +119,7 @@
           null
         ]
       },
-      "/Users/dewaldviljoen/Desktop/Applications/Week_5/Cloud-stay/spec/features/sign_up_page_spec.rb": {
+      "/Users/mariavalerogonzalez/Documents/My_Projects/Makers/Week_5/Cloud-stay/spec/features/sign_up_page_spec.rb": {
         "lines": [
           1,
           1,
@@ -118,7 +137,7 @@
           null
         ]
       },
-      "/Users/dewaldviljoen/Desktop/Applications/Week_5/Cloud-stay/spec/features/viewing_main_homepage_spec.rb": {
+      "/Users/mariavalerogonzalez/Documents/My_Projects/Makers/Week_5/Cloud-stay/spec/features/viewing_main_homepage_spec.rb": {
         "lines": [
           null,
           null,
@@ -155,7 +174,7 @@
           null
         ]
       },
-      "/Users/dewaldviljoen/Desktop/Applications/Week_5/Cloud-stay/spec/user_spec.rb": {
+      "/Users/mariavalerogonzalez/Documents/My_Projects/Makers/Week_5/Cloud-stay/spec/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -211,6 +230,6 @@
         ]
       }
     },
-    "timestamp": 1622114784
+    "timestamp": 1622125036
   }
 }
