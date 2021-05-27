@@ -64,11 +64,12 @@ class CloudStay < Sinatra::Base
 
   get '/clouds/:cloud_id/add_availability' do
     @cloud_id = params[:cloud_id]
+    #@cloud_name = connection.exec('SELECT name FROM clouds WHERE id = #{params[:cloud_id]};')
     erb:add_availability
   end
 
   post '/add_availability' do
-    Availability.create(start_date: params[:available_from], end_date: params[available_to], cloud_id: @c_1d)
+    Availability.create(start_date: params[:available_from], end_date: params[available_to], cloud_id: @cloud_id)
     redirect '/clouds'
   end
 

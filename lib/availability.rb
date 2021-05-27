@@ -1,5 +1,5 @@
-#require 'PG'
-#require_relative 'cloud'
+require 'PG'
+require_relative 'cloud'
 
 class Availability
   attr_reader :cloud_id, :start_date, :end_date
@@ -19,7 +19,6 @@ class Availability
     result = connection.exec("INSERT INTO availability (start_date, end_date, cloud_id) VALUES('#{start_date}', '#{end_date}', #{cloud_id}) RETURNING id, start_date, end_date, cloud_id")
     # result = connection.exec("SELECT * FROM availability WHERE cloud_id = #{cloud_id};")
      Availability.new(
-      id: result[0]['id'],
       start_date: result[0]['start_date'],
       end_date: result[0]['end_date'],
       cloud_id: result[0]['cloud_id']
