@@ -65,7 +65,7 @@ class CloudStay < Sinatra::Base
     erb :new
   end
 
-  get '/clouds/6/book' do
+  get '/clouds/:cloud_id/book' do
     @book = Book.create
     erb :book
   end
