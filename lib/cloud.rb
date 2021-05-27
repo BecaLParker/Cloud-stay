@@ -1,9 +1,10 @@
 require 'PG'
 
 class Cloud
-  attr_reader :name, :description, :price, :user_id
+  attr_reader :name, :description, :price, :user_id, :id
 
-  def initialize(name:, description:, price:, user_id:)
+  def initialize(id:, name:, description:, price:, user_id:)
+    @id = id
     @name = name
     @description = description
     @price = price
@@ -19,6 +20,7 @@ class Cloud
     result = connection.exec('SELECT * FROM clouds;')
     result.map do |cloud|
       Cloud.new(
+        id: cloud['id'],
         name: cloud['name'],
         description: cloud['description'],
         price: cloud['price'],
@@ -35,6 +37,7 @@ class Cloud
                 end
     result = connection.exec("INSERT INTO clouds (name, description, price, user_id) VALUES('#{name}', '#{description}', '#{price}', #{user_id}) RETURNING id, name, description, price, user_id;")
     result = Cloud.new(
+      id: result[0]['id'],
       name: result[0]['name'], 
       description: result[0]['description'], 
       price: result[0]['price'], 
