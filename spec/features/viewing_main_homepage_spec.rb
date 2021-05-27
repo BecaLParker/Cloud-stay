@@ -14,13 +14,13 @@ feature 'visiting the clouds listing page' do
   # before block and code here for capybara to login first
 
   it 'shows available clouds' do
-    expect(page).to have_table('Available clouds')
+    expect(page).to have_content('Available clouds')
     expect(page).to have_content('Cloud Nine')
     expect(page).to have_content('Cloud Nine NEW')
   end
 
   it 'shows page links' do
-    expect(page).to have_button('Add a cloud listing')
+    expect(page).to have_content('Add a cloud listing')
     expect(page).to have_link('Sign out', href: '/')
     expect(page).to have_link('Requests', href: '/requests')
   end

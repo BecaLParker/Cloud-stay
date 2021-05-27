@@ -11,7 +11,7 @@ class User
   end
 
   def self.user_create(username:, password:)
-    connection = if ENV['ENVIRONMENT'] = 'test'
+    connection = if ENV['ENVIRONMENT'] == 'test'
                    PG.connect(dbname: 'cloud_stay_test')
                  else
                    PG.connect(dbname: 'cloud_stay')
@@ -30,7 +30,7 @@ class User
   end
 
   def self.user_find(id:)
-    connection = if ENV['ENVIRONMENT'] = 'test'
+    connection = if ENV['ENVIRONMENT'] == 'test'
                    PG.connect(dbname: 'cloud_stay_test')
                  else
                    PG.connect(dbname: 'cloud_stay')
@@ -46,7 +46,7 @@ class User
   end
 
   def self.authenticate_user(username:, password:)
-    connection = if ENV['ENVIRONMENT'] = 'test'
+    connection = if ENV['ENVIRONMENT'] == 'test'
                    PG.connect(dbname: 'cloud_stay_test')
                  else
                    PG.connect(dbname: 'cloud_stay')
