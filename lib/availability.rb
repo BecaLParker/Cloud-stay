@@ -1,12 +1,13 @@
-class Book
+require 'PG'
+require_relative 'cloud'
 
-  attr_reader :id, :start_date, :end_date, :cloud_id
+class Availability
+  attr_reader :cloud_id, :start_date, :end_date
 
-  def initialize(id:, start_date:, end_date:, cloud_id:)
-    @id = id
+  def initialize(cloud_id:, start_date:, end_date:)
+    @cloud_id = cloud_id
     @start_date = start_date
     @end_date = end_date
-    @cloud_id = cloud_id
   end
 
   def self.create(cloud_id:, start_date:, end_date:)
@@ -15,10 +16,9 @@ class Book
     else
       connection = PG.connect(dbname: 'cloud_stay')
     end
-    result = connection.exec("INSERT INTO booking (start_date, end_date, cloud_id) VALUES('#{start_date}', '#{end_date}', #{cloud_id}) RETURNING id, start_date, end_date, cloud_id")
+    result = connection.exec("INSERT INTO availability (start_date, end_date, cloud_id) VALUES('#{start_date}', '#{end_date}', #{cloud_id}) RETURNING id, start_date, end_date, cloud_id")
     # result = connection.exec("SELECT * FROM availability WHERE cloud_id = #{cloud_id};")
-     Book.new(
-      id: result[0]['id'],
+     Availability.new(
       start_date: result[0]['start_date'],
       end_date: result[0]['end_date'],
       cloud_id: result[0]['cloud_id']
