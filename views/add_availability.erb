@@ -1,6 +1,6 @@
-<h2> Add Availability for the selected cloud <h2>
+<h2> Add Availability for the selected cloud <%= @cloud_id %> <h2>
 
-<form action="#" method="get" align="center">
+<form action="/clouds/<%= @cloud_id %>/add_availability" method="POST">
   <label for="available_from">
     Available from (DD/MM/YY)
     <input type="date" name="available_from">
@@ -9,8 +9,5 @@
 	Available to (DD/MM/YY)
     <input type="date" name="available_to">
   </label>
-
-  <form action='/add_availability' method="POST">
-      <input type="submit" value="Add Availability">
-    </form>
+  <input type="submit" value="Add Availability">
 </form>
