@@ -79,18 +79,29 @@ class CloudStay < Sinatra::Base
     erb :new
   end
 
+  post '/clouds/:cloud_id/book' do
+    @cloud_id = params[:cloud_id]
+    connection = PG.connect(dbname: 'cloud_stay')
+    @available = connection.exec("SELECT * FROM availability WHERE cloud_id = (#{@cloud_id})")
+    redirect '/clouds/:cloud_id/book/new'
+  end
 
   get '/clouds/:cloud_id/book/new' do
     @cloud_id = params[:cloud_id]
-    connection = PG.connect(dbname: 'cloud_stay_test')
-    @available = connection.exec("SELECT * FROM availability WHERE cloud_id = '#{@cloud_id}'  ")
+
     erb :book
   end
-  
-  post '/clouds/:cloud_id/book' do
+
+  post '/clouds/:cloud_id/book/new' do
     Book.create(cloud_id: @cloud_id, start_date: params[:start_date], end_date: params[:end_date])
-    redirect '/clouds/:cloud_id/book'
+    redirect '/clouds/confirmation'
   end
+
+  get '/clouds/confirmation' do
+    "Your booking has been submitted"
+  end
+  
+
 end
 
 

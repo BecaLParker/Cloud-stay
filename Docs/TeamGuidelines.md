@@ -31,4 +31,4 @@
 
 #### Local Branch
 
-* It is recommended that you delete your local branch ( < branch name >)
+* It is recommended that you delete your local branch (git checkout -d < branch name >)
