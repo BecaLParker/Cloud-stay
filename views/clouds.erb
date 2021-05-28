@@ -47,6 +47,7 @@
             <h3>Welcome, <%= @user.username %></h3>
             <h1>Scroll Through Our Wonderful Clouds & Book</h1> 
             <p>Your User No is <%= @user.id %> and, you may only add availability to clouds you listed</p>
+            <h1><% flash[:notice] %></h1>
         </article>
         <article class="search_form">
                 <%# <form action="#" method="get">
