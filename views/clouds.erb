@@ -33,6 +33,9 @@
       <td><%= cloud.name %></td>
       <td><%= cloud.description %></td>
       <td><%= cloud.price %></td>
+      <td><form action='/clouds/<%= cloud.id %>/add_availability' method="GET">
+      <input type="submit" value="Add Availability">
+    </form>
     </tr>
     <% end %>
   </tbody>

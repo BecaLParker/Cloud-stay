@@ -8,6 +8,8 @@ require 'sinatra/flash'
 require './lib/users'
 require './lib/book'
 require 'pg'
+require './lib/availability'
+
 
 class CloudStay < Sinatra::Base
   configure :development do
@@ -58,8 +60,19 @@ class CloudStay < Sinatra::Base
   end
 
   post '/clouds/:id/cloud' do
-    Cloud.create(name: params[:name], description: params[:description], price: params[:price], user_id: params[:id])
+    cloud = Cloud.create(name: params[:name], description: params[:description], price: params[:price], user_id: params[:id])
     redirect '/clouds'
+  end
+
+  get '/clouds/:cloud_id/add_availability' do
+    @cloud_id = params[:cloud_id]
+    #@cloud_name = connection.exec('SELECT name FROM clouds WHERE id = #{params[:cloud_id]};')
+    erb:add_availability
+  end
+
+  post '/add_availability' do
+    Availability.create(start_date: params[:available_from], end_date: params[available_to], cloud_id: @cloud_id)
+    erb:'/clouds'
   end
 
   get '/new' do
@@ -73,10 +86,12 @@ class CloudStay < Sinatra::Base
     @available = connection.exec("SELECT * FROM availability WHERE cloud_id = '#{@cloud_id}'  ")
     erb :book
   end
-
+  
   post '/clouds/:cloud_id/book' do
     Book.create(cloud_id: @cloud_id, start_date: params[:start_date], end_date: params[:end_date])
     redirect '/clouds/:cloud_id/book'
   end
-
 end
+
+
+# SELECTED * FROM availability(WHERE )
