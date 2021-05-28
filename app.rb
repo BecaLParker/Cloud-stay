@@ -25,7 +25,7 @@ class CloudStay < Sinatra::Base
       session[:id] = user.id
       redirect('/clouds')
     else
-      flash[:notice] = 'Please check your email or password.'
+      flash[:notice] = 'The username and/or password provided do not match the parameters held. Please try again.'
       redirect('/')
     end
   end
