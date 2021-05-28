@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'rack'
@@ -66,7 +64,6 @@ class CloudStay < Sinatra::Base
 
   get '/clouds/:id/add_availability/new' do
     @cloud_id = params[:id]
-    #@cloud_name = connection.exec('SELECT name FROM clouds WHERE id = #{params[:cloud_id]};')
     erb :add_availability
   end
 
@@ -75,10 +72,9 @@ class CloudStay < Sinatra::Base
     redirect '/clouds'
   end
 
-  get '/new' do
-    erb :new
-  end
-
+  # get '/new' do
+  #   erb :new
+  # end
 
   get '/clouds/:cloud_id/book/new' do
     @cloud_id = params[:cloud_id]
@@ -92,6 +88,3 @@ class CloudStay < Sinatra::Base
     redirect '/clouds/:cloud_id/book'
   end
 end
-
-
-# SELECTED * FROM availability(WHERE )

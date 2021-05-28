@@ -235,7 +235,8 @@ li {
 
 .cloud_price {
     font-size: 40px;
-    margin-left: 60vw;
+    margin-top: 20px;
+    margin-bottom: -60px;
 }
 
 .cloud_img {
@@ -248,12 +249,13 @@ li {
 }
 
 .book_btn {
-    width: 150px;
-    height: 60px;
+    width: 120px;
+    height: 50px;
     border: 2px solid #0da8db;
     border-radius: 10px;
     background-color: #0da8db3b;
     margin-left: 60vw;
+    margin-bottom: 10px;
     -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
     box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
 }
