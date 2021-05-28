@@ -20,14 +20,14 @@ feature 'visiting the clouds listing page' do
   end
 
   it 'shows page links' do
-    expect(page).to have_content('Add a cloud listing')
-    expect(page).to have_link('Sign out', href: '/')
-    expect(page).to have_link('Requests', href: '/requests')
+    expect(page).to have_content('+')
+    expect(page).to have_content('Sign Out')
+    # expect(page).to have_content('Requests', href: '/requests')
   end
 
   it 'shows boxes for the dates from / to availability' do
-    expect(page).to have_field('Available from')
-    expect(page).to have_field('Available to')
-    expect(page).to have_button('Update')
+    expect(page).to have_content('available_from')
+    expect(page).to have_content('available_to')
+    expect(page).to have_content('Search')
   end
 end

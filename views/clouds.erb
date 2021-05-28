@@ -1,46 +1,109 @@
-<p align="right">  &nbsp;&nbsp; <a href="/requests"> Requests </a> </p>
+<!DOCTYPE html>
+<html lang="en">
 
-<h1><p align="center"> <%= 'Book a cloud stay'%> </p></h1> 
-<p> <%= @user.id %> </p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/15ed7b8e2c.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Cloud Stay</title>
+</head>
 
-<form action='/clouds/<%= @user.id %>/cloud/new' method="GET">
-  <input type="submit" value="Add a cloud listing">
+<body>
+    <header >
+        <nav class="navbar fixed navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> <img class="ms-5" style="width: 45px;" src="./images/cloudstaylogo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active me-5" aria-current="page" href="#">Requests</a>
+                        </li>
+                        <li class="nav-item">
+                            <form action="/sessions/destroy" method="POST">
+                                <input id="sign_out_nav" type="submit" value="Sign Out">
+                            </form>
+                        </li>
+                         <%# <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li> %>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<form class="add-listing_btn" action='/clouds/<%= @user.id %>/cloud/new' method="get">
+    <button class="add-listing" type="submit"><i class="fas fa-plus"></i></button>
 </form>
 
- <p><%= @user.username %>
-
-<form action="#" method="get" align="center">
-  <label for="available_from">
-    Available from (DD/MM/YY)
-    <input type="text" name="Available from">
-  </labe3l>
-  <label for="available_to">
-	Available to (DD/MM/YY)
-    <input type="text" name="Available to">
-  </label>
-  <input type="submit" value="Update">
-</form>
-
-<table id="Available clouds" style="width: 80%;" border = "4"cellpadding = "1" align="center">
-  <thead>
-    <tr>
-      <th colspan="3"><h2>AVAILABLE CLOUDS</h2></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @clouds.each do |cloud| %> 
-    <tr>
-      <td><%= cloud.name %></td>
-      <td><%= cloud.description %></td>
-      <td><%= cloud.price %></td>
-      <td><form action="/clouds/<%= cloud.id %>/add_availability/new" method="GET">
+<form action="/clouds/<%= cloud.id %>/add_availability/new" method="GET">
       <input type="submit" value="Add Availability">
     </form>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+   
+    <main class="clouds_background">
+        <article class="clouds_heading mt-5 mb-5">
+            <h3>Welcome, <%= @user.username %></h3>
+            <h1>Scroll Through Our Wonderful Clouds & Book</h1> 
+            <p> <%= @user.id %> </p>
+        </article>
+        <article class="search_form">
+                <form action="#" method="get">
+                    <label for="available_from">Available from (DD/MM/YY)</label>
+                    <input type="text" name="available_from">
+                    <label for="available_to">Available to (DD/MM/YY)</label>
+                    <input type="text" name="available_to">
+                    <input type="submit" value="Search">
+                </form>
+        </article>
+        <article class="all_bookings">
+            <% @clouds.each do |cloud| %>
+            <ul class="bookings_list">
+                <img class="cloud_img" src="https://source.unsplash.com/collection/37188508" alt="">
+                <li class="cloud_name"><h4><%= cloud.name %></h4></li>
+                <ul>
+                    <li class="cloud_description"><%= cloud.description %></li>
+                    <li class="cloud_price">£ <%= cloud.price %> p/n</li>
+                    <li class="start_date">Available From: 12/12/2021</li>
+                    <li class="end_date">Available To: 01/05/2022</li>
+                    <li>
+                        <form action="/cloud/cloud_id/book" method="POST">
+                            <input class="book_btn" type="submit" value="Book">
+                        </form>
+                    </li>
+                </ul>
+            </ul>
+            <% end %>
+        </article>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
+    </script>
+</body>
 
-<form action="/sessions/destroy" method="POST">
-  <input type="submit" value="Sign Out">
-</form>
+</html>

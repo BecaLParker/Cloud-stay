@@ -1,0 +1,259 @@
+/* GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+* {
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+}
+
+#sign_out_nav {
+    background-color: transparent; 
+    border: none; 
+    color: #bbbbbb; 
+    margin-top:7px; 
+    margin-bottom: 7px; 
+    margin-right:25px;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN SIGN IN */
+
+.landing_page {
+    background-image: url('https://source.unsplash.com/collection/37188508');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #999999;
+    box-shadow: inset 3500px 0 0 0 rgba(0, 0, 0, 0.8);
+    border-color: rgba(0, 0, 0, 1);
+}
+
+.center_page_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    width: 80%;
+    color: #fff;
+}
+
+.center_page_box img {
+    width: 300px;
+    text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.9);
+}
+
+.center_page_box h1, h3 {
+    color: #fff;
+    text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.9);
+}
+
+.center_page_box h3 {
+    color: #fff;
+    text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.9);
+}
+
+.sign_in_form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.sign_in_form input {
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.705);
+    height: 40px;
+    width: 400px;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 20px;
+    outline: none;
+    -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+}
+
+.sign_in_form input[type="submit"] {
+    background-color: #0da8db;
+}
+
+.sign_up_hover {
+    font-size: 20px;
+    text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.9);
+    transition: 0.5s;
+}
+
+.sign_up_hover:hover {
+    font-size: 25px;
+    color: #fff;
+}
+
+.flash_notice {
+    border: 1px solid red;
+    border-radius: 20px;
+    background-color: #ff000021;
+    padding: 20px;
+}
+
+/* CLOUDS CLOUDS CLOUDS CLOUDS CLOUDS CLOUDS CLOUDS CLOUDS CLOUDS CLOUDS CLOUDS CLOUDS CLOUDS CLOUDS */
+
+.clouds_background {
+    background-image: url('https://source.unsplash.com/collection/37188508') !important;
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 3500px 0 0 0 #d3d3d3cc;
+    border-color: rgba(0, 0, 0, 1);
+}
+
+.add-listing {
+    width: 100px;
+    height: 100px;
+    background-color: #0da8db;
+    border: none;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 80px;
+    right: 50px;
+    text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.9);
+}
+
+.add-listing:hover {
+    transform: scale(1.2);
+}
+
+.add-listing i {
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+}
+
+.clouds_heading {
+    text-align: center;
+}
+
+.clouds_heading h1, h3 {
+    color: #252525;
+    text-shadow: 8px 8px 8px #4d4d4de6;
+}
+
+.search_form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search_form input {
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff83;
+    height: 40px;
+    width: 400px;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 20px;
+    outline: none;
+    -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+}
+
+.search_form input[type="submit"] {
+    background-color: #0da8db;
+}
+
+.search_form input[type="submit"]:hover {
+    background-color: black;
+    color: #0da8db;
+    font-weight: 700;
+}
+
+.all_bookings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    
+}
+
+.bookings_list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 15px 15px;
+    width: 100%;
+    border-bottom: 2px solid #0da8db;
+    border-right: 2px solid #0da8db;
+    border-radius: 15px;
+    background-color: #0da8db2c;
+    -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+    box-shadow: 8px 8px 10px 1px rgba(0,0,0,0.5);
+}
+
+.cloud_name {
+    margin-top: -50px;
+    margin-left: 10vw;
+    margin-bottom: 90px;
+    text-shadow: 8px 8px 8px #4d4d4de6;
+} 
+
+.cloud_description {
+    width: 75%;
+}
+
+.cloud_price {
+    font-size: 40px;
+    margin-left: 60vw;
+}
+
+.cloud_img {
+    width: 20%;
+    margin-left: 60vw;
+    margin-top: 15px;
+    margin-bottom: -70px;
+    -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+}
+
+.book_btn {
+    width: 150px;
+    height: 60px;
+    border: 2px solid #0da8db;
+    border-radius: 10px;
+    background-color: #0da8db3b;
+    margin-left: 60vw;
+    -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+}
