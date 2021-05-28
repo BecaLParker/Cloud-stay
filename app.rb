@@ -89,12 +89,12 @@ class CloudStay < Sinatra::Base
 
   post '/clouds/:id/book' do
     @cloud_id = params[:id]
-    Book.create(start_date: params[:start_date], end_date: params[:end_date], cloud_id: params[:id])
-    redirect '/clouds/confirmation'
+    book = Book.create(start_date: params[:start_date], end_date: params[:end_date], cloud_id: params[:id])
+    redirect '/confirmation'
   end
 
-  get '/clouds/confirmation' do
-    "Your booking has been submitted"
+  get '/confirmation' do
+    erb :confirmation
   end
   
 end

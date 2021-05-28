@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -109,14 +110,15 @@
     <main class="landing_page">
         <div class="center_page_box">
             <div class="mb-5">
-                <h1> Make a booking </h1>
-                <h2>Choose your preferred date</h2>
+                <h1>Your Booking is Confirmed!!!</h1> 
             </div>
             <div class="sign_in_form">
-                <form action="/clouds/<%= @cloud_id %>/book" method="POST">
-                    <input type="date" name="start_date" min= "<%= @available.start_date %>" max= "<%= @available.end_date %>"    required>
-                    <input type="date" name="end_date" min= "<%= @available.start_date %>" max= "<%= @available.end_date %>"    required>
-                    <input type="submit" value="Book">
+                    
+                <form action="/sessions/destroy" method="POST">
+                    <input  type="submit" value="Sign Out">
+                </form>
+                <form action="/clouds" method="get">
+                    <input  type="submit" value="Clouds">
                 </form>
             </div>
             

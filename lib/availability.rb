@@ -34,9 +34,9 @@ class Availability # Added id returning from database!
                     PG.connect(dbname: 'cloud_stay')
                   end
                   return nil unless cloud_id
-
-    result = connection.exec("SELECT * FROM availability WHERE id = #{cloud_id}")
+    result = connection.exec("SELECT * FROM availability WHERE cloud_id = #{cloud_id}")
       Availability.new(
+        id: result[0]['id'],
         start_date: result[0]['start_date'],
         end_date: result[0]['end_date'],
         cloud_id: result[0]['cloud_id']
