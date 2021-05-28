@@ -32,23 +32,23 @@
                                 <input id="sign_out_nav" type="submit" value="Sign Out">
                             </form>
                         </li>
-                         <%# <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li> %>
+                        #  <%# <li class="nav-item dropdown">
+                        #     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        #         data-bs-toggle="dropdown" aria-expanded="false">
+                        #         Dropdown
+                        #     </a>
+                        #     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        #         <li><a class="dropdown-item" href="#">Action</a></li>
+                        #         <li><a class="dropdown-item" href="#">Another action</a></li>
+                        #         <li>
+                        #             <hr class="dropdown-divider">
+                        #         </li>
+                        #         <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        #     </ul>
+                        # </li>
+                        # <li class="nav-item">
+                        #     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        # </li> %>
                     </ul>
                 </div>
             </div>
@@ -85,7 +85,7 @@
                     <li class="start_date">Available From: 12/12/2021</li>
                     <li class="end_date">Available To: 01/05/2022</li>
                     <li>
-                        <form action="/cloud/cloud_id/book" method="POST">
+                        <form action="/clouds/<%= cloud.id %>/book/new" method="GET">
                             <input class="book_btn" type="submit" value="Book">
                         </form>
                     </li>
