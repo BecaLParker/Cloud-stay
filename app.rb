@@ -70,7 +70,7 @@ class CloudStay < Sinatra::Base
 
   post '/add_availability' do
     Availability.create(start_date: params[:available_from], end_date: params[available_to], cloud_id: @cloud_id)
-    redirect '/clouds'
+    erb:'/clouds'
   end
 
   get '/new' do
@@ -82,15 +82,15 @@ class CloudStay < Sinatra::Base
     erb :book
   end
 
-  post '/available' do
-    #for M&J to have fun
+#   post '/available' do
+#     #for M&J to have fun
 
-#     name: Maria
-# description: Cozy place in Galician coast
-# price: 40
-# available_from: 2021-05-29
-# available_to: 2021-05-30
-  end
+# #     name: Maria
+# # description: Cozy place in Galician coast
+# # price: 40
+# # available_from: 2021-05-29
+# # available_to: 2021-05-30
+#   end
 
 end
 
