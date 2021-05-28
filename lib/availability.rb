@@ -1,24 +1,26 @@
 require 'PG'
 require_relative 'cloud'
 
-class Availability
-  attr_reader :cloud_id, :start_date, :end_date
+class Availability # Added id returning from database!
+  attr_reader :cloud_id, :start_date, :end_date, :id
 
-  def initialize(cloud_id:, start_date:, end_date:)
+  def initialize(id:, cloud_id:, start_date:, end_date:)
     @cloud_id = cloud_id
     @start_date = start_date
     @end_date = end_date
+    @id = id
   end
 
   def self.create(cloud_id:, start_date:, end_date:)
-    if ENV['ENVIRONMENT'] = 'test'
+    if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'cloud_stay_test')
     else
       connection = PG.connect(dbname: 'cloud_stay')
     end
-    result = connection.exec("INSERT INTO availability (start_date, end_date, cloud_id) VALUES('#{start_date}', '#{end_date}', #{cloud_id}) RETURNING id, start_date, end_date, cloud_id")
+    result = connection.exec("INSERT INTO availability (start_date, end_date, cloud_id) VALUES('#{start_date}', '#{end_date}', '#{cloud_id}') RETURNING id, start_date, end_date, cloud_id;")
     # result = connection.exec("SELECT * FROM availability WHERE cloud_id = #{cloud_id};")
      Availability.new(
+      id: result[0]['id'],
       start_date: result[0]['start_date'],
       end_date: result[0]['end_date'],
       cloud_id: result[0]['cloud_id']

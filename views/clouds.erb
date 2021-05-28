@@ -59,6 +59,10 @@
     <button class="add-listing" type="submit"><i class="fas fa-plus"></i></button>
 </form>
 
+<form action="/clouds/<%= cloud.id %>/add_availability/new" method="GET">
+      <input type="submit" value="Add Availability">
+    </form>
+   
     <main class="clouds_background">
         <article class="clouds_heading mt-5 mb-5">
             <h3>Welcome, <%= @user.username %></h3>
