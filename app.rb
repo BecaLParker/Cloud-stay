@@ -7,6 +7,7 @@ require './lib/cloud'
 require 'sinatra/flash'
 require './lib/users'
 require './lib/book'
+require 'pg'
 
 class CloudStay < Sinatra::Base
   configure :development do
@@ -68,6 +69,8 @@ class CloudStay < Sinatra::Base
 
   get '/clouds/:cloud_id/book/new' do
     @cloud_id = params[:cloud_id]
+    connection = PG.connect(dbname: 'cloud_stay_test')
+    @available = connection.exec("SELECT * FROM availability WHERE cloud_id = '#{@cloud_id}'  ")
     erb :book
   end
 
