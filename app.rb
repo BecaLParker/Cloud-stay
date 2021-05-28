@@ -79,21 +79,20 @@ class CloudStay < Sinatra::Base
     erb :new
   end
 
-  post '/clouds/:cloud_id/book' do
-    @cloud_id = params[:cloud_id]
-    connection = PG.connect(dbname: 'cloud_stay')
-    @available = connection.exec("SELECT * FROM availability WHERE cloud_id = (#{@cloud_id})")
-    redirect '/clouds/:cloud_id/book/new'
-  end
+  # post '/clouds/:id/book' do
+  #   @cloud_id = params[:id]
+  #   redirect '/clouds/:id/book/new'
+  # end
 
-  get '/clouds/:cloud_id/book/new' do
-    @cloud_id = params[:cloud_id]
-
+  get '/clouds/:id/book/new' do
+    @cloud_id = params[:id]
+    @available = Availability.find(cloud_id: params[:id])
     erb :book
   end
 
-  post '/clouds/:cloud_id/book/new' do
-    Book.create(cloud_id: @cloud_id, start_date: params[:start_date], end_date: params[:end_date])
+  post '/clouds/:id/book' do
+    @cloud_id = params[:id]
+    Book.create(start_date: params[:start_date], end_date: params[:end_date], cloud_id: params[:id])
     redirect '/clouds/confirmation'
   end
 
