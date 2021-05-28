@@ -66,7 +66,7 @@
                     <li class="cloud_description"><%= cloud.description %></li>
                     <li class="cloud_price">£ <%= cloud.price %> p/n</li>
                     <li>
-                        <form action="/cloud/cloud_id/book" method="POST">
+                        <form action="/clouds/<%= cloud.id %>/book/new" method="GET">
                             <input class="book_btn" type="submit" value="Book">
                         </form>
                         <% if cloud.user_id == session[:id] %>

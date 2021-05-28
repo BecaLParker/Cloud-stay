@@ -1,12 +1,11 @@
 <h1> Make a booking </h1>
-
-
+<%= @cloud_id %>
 <label>
 Choose your preferred date
-<input type="date" name="start_date" min= "<%= @available.start_date %>" max= "<%= @available.end_date %>"    required>
-<input type="date" name="end_date" min= "<%= @available.start_date %>" max= "<%= @available.end_date %>"    required>
-
 <span class="validity"></span>
 </label>
-
+<form action="/clouds/<%= @cloud_id %>/book" method="POST">
+<input type="date" name="start_date" min= "<%= @available.start_date %>" max= "<%= @available.end_date %>"    required>
+<input type="date" name="end_date" min= "<%= @available.start_date %>" max= "<%= @available.end_date %>"    required>
 <input type="submit" value="Book">
+</form>
