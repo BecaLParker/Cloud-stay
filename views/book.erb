@@ -3,7 +3,9 @@
 
 <label>
 Choose your preferred date
-<input type="date" name="date" min= "<%= @book.start_date %>" max= "<%= @book.end_date %>"    required>
+<input type="date" name="start_date" min= "<%= @available.start_date %>" max= "<%= @available.end_date %>"    required>
+<input type="date" name="end_date" min= "<%= @available.start_date %>" max= "<%= @available.end_date %>"    required>
+
 <span class="validity"></span>
 </label>
 
