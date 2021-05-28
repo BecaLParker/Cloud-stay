@@ -32,7 +32,6 @@
                                 <input id="sign_out_nav" type="submit" value="Sign Out">
                             </form>
                         </li>
-
                     </ul>
                 </div>
             </div>
@@ -42,25 +41,21 @@
 <form class="add-listing_btn" action='/clouds/<%= @user.id %>/cloud/new' method="get">
     <button class="add-listing" type="submit"><i class="fas fa-plus"></i></button>
 </form>
-
-<form action="/clouds/<%= cloud.id %>/add_availability/new" method="GET">
-      <input type="submit" value="Add Availability">
-    </form>
    
     <main class="clouds_background">
         <article class="clouds_heading mt-5 mb-5">
             <h3>Welcome, <%= @user.username %></h3>
             <h1>Scroll Through Our Wonderful Clouds & Book</h1> 
-            <p> <%= @user.id %> </p>
+            <p>Your User No is <%= @user.id %> and, you may only add availability to clouds you listed</p>
         </article>
         <article class="search_form">
-                <form action="#" method="get">
+                <%# <form action="#" method="get">
                     <label for="available_from">Available from (DD/MM/YY)</label>
                     <input type="text" name="available_from">
                     <label for="available_to">Available to (DD/MM/YY)</label>
                     <input type="text" name="available_to">
                     <input type="submit" value="Search">
-                </form>
+                </form> %>
         </article>
         <article class="all_bookings">
             <% @clouds.each do |cloud| %>
@@ -70,12 +65,15 @@
                 <ul>
                     <li class="cloud_description"><%= cloud.description %></li>
                     <li class="cloud_price">£ <%= cloud.price %> p/n</li>
-                    <li class="start_date">Available From: 12/12/2021</li>
-                    <li class="end_date">Available To: 01/05/2022</li>
                     <li>
                         <form action="/clouds/<%= cloud.id %>/book/new" method="GET">
                             <input class="book_btn" type="submit" value="Book">
                         </form>
+                        <% if cloud.user_id == session[:id] %>
+                        <form action="/clouds/<%= cloud.id %>/add_availability/new" method="GET">
+                            <input class="book_btn" type="submit" value="Add Availability">
+                        </form>
+                        <% end %>
                     </li>
                 </ul>
             </ul>

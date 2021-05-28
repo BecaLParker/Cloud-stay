@@ -1,13 +1,134 @@
-<h2> Add Availability for the selected cloud <%= @cloud_id %> <h2>
+<!DOCTYPE html>
+<html lang="en">
 
-<form action="/clouds/<%= @cloud_id %>/add_availability" method="POST">
-  <label for="available_from">
-    Available from (DD/MM/YY)
-    <input type="date" name="available_from">
-  </label>
-  <label for="available_to">
-	Available to (DD/MM/YY)
-    <input type="date" name="available_to">
-  </label>
-  <input type="submit" value="Add Availability">
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/15ed7b8e2c.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <style>
+            .landing_page {
+              background-image: url('https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80');
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              min-height: 100vh;
+              background-color: #999999;
+              box-shadow: inset 3500px 0 0 0 rgba(0, 0, 0, 0.8);
+              border-color: rgba(0, 0, 0, 1);
+          }
+
+          .center_page_box {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              height: 100vh;
+              width: 80%;
+              color: #fff;
+          }
+
+          .center_page_box img {
+              width: 300px;
+              text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.9);
+          }
+
+          .center_page_box h1, h3 {
+              color: #fff;
+              text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.9);
+          }
+
+          .center_page_box h3 {
+              color: #fff;
+              text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.9);
+          }
+
+          .sign_in_form form {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+          }
+
+          .sign_in_form input {
+              border: none;
+              border-radius: 5px;
+              background-color: rgba(255, 255, 255, 0.705);
+              height: 40px;
+              width: 400px;
+              text-align: center;
+              margin: 10px 0;
+              font-size: 20px;
+              outline: none;
+              -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+              box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+          }
+
+          .sign_in_form input[type="submit"] {
+              background-color: #0da8db;
+          }
+
+          #text_block {
+            width: 800px;
+            height: 150px;
+            text-align:left;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.705);
+            margin: 10px 0;
+            font-size: 20px;
+            outline: none;
+            -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+            box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+          }
+
+          .sign_up_hover {
+              font-size: 20px;
+              text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.9);
+              transition: 0.5s;
+          }
+
+          .sign_up_hover:hover {
+              font-size: 25px;
+              color: #fff;
+          }
+
+        </style>
+    <title>Cloud Stay</title>
+</head>
+
+<body>
+
+    <main class="landing_page">
+        <div class="center_page_box">
+            <div class="mb-5">
+                <h1>Add Availability for the selected cloud</h1> 
+                <img src="./images/cloudstaylogo.png" alt="">
+            </div>
+            <div class="sign_in_form">
+                <form action="/clouds/<%= @cloud_id %>/add_availability" method="POST">
+                  <label for="available_from">Available from</label>
+                    <input type="date" name="available_from" required>
+                  <label for="available_to">Available to </label>
+                    <input type="date" name="available_to" required>
+                  <input type="submit" value="Add Availability">
+                </form>
+                <form action="/sessions/destroy" method="POST">
+                    <input  type="submit" value="Sign Out">
+                </form>
+                <form action="/clouds" method="get">
+                    <input  type="submit" value="Cancel">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
