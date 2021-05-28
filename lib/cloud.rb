@@ -43,5 +43,6 @@ class Cloud
       price: result[0]['price'], 
       user_id: result[0]['user_id']
     )
+    
   end
 end

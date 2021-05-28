@@ -1,0 +1,16 @@
+<h2> Add Availability for the selected cloud <h2>
+
+<form action="#" method="get" align="center">
+  <label for="available_from">
+    Available from (DD/MM/YY)
+    <input type="date" name="available_from">
+  </label>
+  <label for="available_to">
+	Available to (DD/MM/YY)
+    <input type="date" name="available_to">
+  </label>
+
+  <form action='/add_availability' method="POST">
+      <input type="submit" value="Add Availability">
+    </form>
+</form>
