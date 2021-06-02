@@ -16,7 +16,7 @@
 
 #### GitHub Pull Request
 
-* Go to the Github repo (https://github.com/BecaLParker/Cloud-stay)
+* Go to the Github repo (Repo address)
 * Click on the "Pull requests" tab
 * Click on "New pull request"
 * Select your branch in the "compare" select block
